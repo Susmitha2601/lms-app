@@ -9,7 +9,7 @@ stages {
     stage('CODE ANALYSIS-SONARQUBE') {
         steps {
            sh 'echo sonar analysis started'
-            sh 'cd webapp && sudo docker run --rm -e SONAR_HOST_URL="http://http://16.171.27.152:9000" -e SONAR_LOGIN="sqp_c5f20de1ee1a200f2ee80696df86e5b599e74658"-v ".:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey="lms"
+            sh 'cd webapp && sudo docker run --rm -e SONAR_HOST_URL="http://http://16.171.27.152:9000" -e SONAR_LOGIN="sqp_c5f20de1ee1a200f2ee80696df86e5b599e74658"-v ".:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms'
         }
     }
     stage('BUILD FOR ARTIFACTS') {

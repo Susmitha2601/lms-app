@@ -7,12 +7,10 @@ stages {
       }
     }
     stage('CODE ANALYSIS-SONARQUBE') {
-        environment{
-            SONAR_URL = "http://51.20.81.60:9000"
-        }
+            
         steps {
            withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'cd webapp && npm sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+          sh 'cd webapp && -e SONAR_URL = "http://51.20.81.60:9000" -e sonar_login=$SONAR_AUTH_TOKEN'
         }
     }
     }

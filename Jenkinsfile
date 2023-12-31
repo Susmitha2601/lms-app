@@ -10,7 +10,7 @@ stages {
             
         steps {
            withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'cd webapp && -e SONAR_URL = "http://51.20.81.60:9000" -e sonar_login=$SONAR_AUTH_TOKEN'
+          sh 'cd webapp && -e SONAR_URL = "http://51.20.81.60:9000" -e sonar_login="1db86828886c353287a7f35b1e1c905d82f4c1f9"'
         }
     }
     }

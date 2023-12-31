@@ -15,6 +15,7 @@ stages {
           sh 'cd webapp && sudo docker run --rm && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
     }
+    }
     stage('BUILD FOR ARTIFACTS') {
         steps {
            sh 'echo build completed'

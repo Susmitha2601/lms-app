@@ -9,7 +9,7 @@ stages {
     stage('CODE ANALYSIS-SONARQUBE') {
             
         steps {
-          sh 'cd webapp && -e SONAR_URL = "http://51.20.81.60:9000" -e sONAR_LOGIN="1db86828886c353287a7f35b1e1c905d82f4c1f9"'
+          sh 'cd webapp -e SONAR_URL = "http://51.20.81.60:9000" -e sONAR_LOGIN="1db86828886c353287a7f35b1e1c905d82f4c1f9"'
         }
     }
     stage('BUILD FOR ARTIFACTS') {
